@@ -3,12 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Research</title>
+<title>Organization Dashboard</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', sans-serif; background: #0f1117; color: #e0e0e0; padding: 24px 16px; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f1117; color: #e0e0e0; padding: 24px 16px; max-width: 860px; margin: 0 auto; }
   h1 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
   .subtitle { font-size: 13px; color: #888; margin-bottom: 32px; }
+
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 40px; }
+  @media (max-width: 600px) { .projects { grid-template-columns: 1fr; } }
+  .project-card { background: #1a1d27; border: 1px solid #2a2d3a; border-radius: 10px; padding: 16px; }
+  .project-card .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .project-card .name { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .project-card .desc { font-size: 12px; color: #aaa; line-height: 1.6; }
+  .status { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; margin-top: 8px; font-weight: 600; }
+  .status.active { background: #1a3a1a; color: #4caf50; }
+  .status.testing { background: #3a2f1a; color: #ff9800; }
+  .status.research { background: #1a2a3a; color: #4a90e2; }
+
   .section { margin-bottom: 32px; }
   .section h2 { font-size: 13px; font-weight: 600; color: #4a90e2; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; border-bottom: 1px solid #222; padding-bottom: 6px; }
   .links { display: flex; flex-direction: column; gap: 8px; }
@@ -20,8 +32,30 @@
 </style>
 </head>
 <body>
-<h1>📊 Daily Research</h1>
-<p class="subtitle">フルカレ × 起業リサーチ自動まとめ</p>
+
+<h1>⚡ Organization Dashboard</h1>
+<p class="subtitle">koki's projects — updated daily</p>
+
+<div class="projects">
+  <div class="project-card">
+    <div class="label">Project 1</div>
+    <div class="name">📅 フルカレ</div>
+    <div class="desc">AIと話せるカレンダーアプリ<br>Flutter / iOS・Android 公開中</div>
+    <span class="status active">● 公開中</span>
+  </div>
+  <div class="project-card">
+    <div class="label">Project 2</div>
+    <div class="name">🏢 耐震カルテ</div>
+    <div class="desc">オフィス家具の地震リスク診断Webアプリ<br>Next.js / Vercel</div>
+    <span class="status testing">● テスト中</span>
+  </div>
+  <div class="project-card" style="grid-column: 1 / -1;">
+    <div class="label">Research</div>
+    <div class="name">🚀 新規事業リサーチ</div>
+    <div class="desc">起業アイデア・市場動向・ビジネスチャンスを毎日AIが調査</div>
+    <span class="status research">● 毎日更新</span>
+  </div>
+</div>
 
 <div class="section">
   <h2>🚀 起業リサーチ</h2>
@@ -29,18 +63,24 @@
 </div>
 
 <div class="section">
-  <h2>📣 マーケティング提案</h2>
+  <h2>🏢 耐震カルテ 提案</h2>
+  <div class="links" id="taishin"></div>
+</div>
+
+<div class="section">
+  <h2>📣 フルカレ マーケティング提案</h2>
   <div class="links" id="marketing"></div>
 </div>
 
 <div class="section">
-  <h2>✨ 機能追加提案</h2>
+  <h2>✨ フルカレ 機能追加提案</h2>
   <div class="links" id="feature"></div>
 </div>
 
 <script>
 const folders = [
   { id: 'startup', path: 'startup-research' },
+  { id: 'taishin', path: 'taishin-karte' },
   { id: 'marketing', path: 'marketing-proposals' },
   { id: 'feature', path: 'feature-proposals' },
 ];
