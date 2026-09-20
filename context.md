@@ -35,3 +35,8 @@
 - 2026-09-20 [マーケ]: iOS27純正カレンダー、TimeTree、Zyve、COUPPLY、ASO改善
 - 2026-09-20 [機能]: TimeTree、Google Calendar、Motion、Reclaim.ai、Clockwise
 - 2026-09-20 [耐震カルテ]: 耐震カルテ、BCP実践促進助成金、什器転倒防止、マルチテナント化、ホワイトレーベル提供
+- 2026-09-20 [起業]: Facilo, palton AI, Gimlet Labs, AI新法, AIエージェント本番化
+- 2026-09-20 [起業アイデア]: マンション防災台帳リマインドSaaS, ご近所送迎シェア, ペットの見送り比較サイト, 地方宿のAI多言語コンシェルジュ
+- 2026-09-20 [マーケ]: Daychat, Cal.ai, Morgen, Google Calendar Gemini, フルカレ
+- 2026-09-20 [機能]: Notion Calendar、Vimcal、Calendara、GroupCal、Amie
+- 2026-09-20 [耐震カルテ]: 耐震カルテ、BCP実践促進助成金、制震ダンパー、ホワイトレーベル提供、危険度判定
