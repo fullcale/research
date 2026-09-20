@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Research</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f1117; color: #e0e0e0; padding: 24px 16px; }
+  h1 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #888; margin-bottom: 32px; }
+  .section { margin-bottom: 32px; }
+  .section h2 { font-size: 13px; font-weight: 600; color: #4a90e2; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; border-bottom: 1px solid #222; padding-bottom: 6px; }
+  .links { display: flex; flex-direction: column; gap: 8px; }
+  .link-item { background: #1a1d27; border: 1px solid #2a2d3a; border-radius: 8px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: #e0e0e0; transition: background 0.15s; }
+  .link-item:hover { background: #22263a; border-color: #4a90e2; }
+  .link-date { font-size: 14px; font-weight: 500; }
+  .link-arrow { color: #4a90e2; font-size: 18px; }
+  .empty { color: #555; font-size: 13px; padding: 8px 0; }
+</style>
+</head>
+<body>
+<h1>📊 Daily Research</h1>
+<p class="subtitle">フルカレ × 起業リサーチ自動まとめ</p>
+
+<div class="section">
+  <h2>🚀 起業リサーチ</h2>
+  <div class="links" id="startup"></div>
+</div>
+
+<div class="section">
+  <h2>📣 マーケティング提案</h2>
+  <div class="links" id="marketing"></div>
+</div>
+
+<div class="section">
+  <h2>✨ 機能追加提案</h2>
+  <div class="links" id="feature"></div>
+</div>
+
+<script>
+const folders = [
+  { id: 'startup', path: 'startup-research' },
+  { id: 'marketing', path: 'marketing-proposals' },
+  { id: 'feature', path: 'feature-proposals' },
+];
+
+async function loadLinks() {
+  for (const { id, path } of folders) {
+    const container = document.getElementById(id);
+    try {
+      const res = await fetch(`${path}/index.json`);
+      const files = await res.json();
+      if (!files.length) {
+        container.innerHTML = '<p class="empty">ファイルなし</p>';
+        continue;
+      }
+      container.innerHTML = files.sort().reverse().map(f =>
+        `<a class="link-item" href="${path}/${f}">
+          <span class="link-date">${f.replace('.html','')}</span>
+          <span class="link-arrow">›</span>
+        </a>`
+      ).join('');
+    } catch {
+      container.innerHTML = '<p class="empty">ファイルなし</p>';
+    }
+  }
+}
+
+loadLinks();
+</script>
+</body>
+</html>
