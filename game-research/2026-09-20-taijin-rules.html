@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>対人カード/パーティゲーム ルール分析レポート</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; background: #f9f9f9; color: #222; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #4a90e2; padding-bottom: 8px; }
+  h2 { color: #2c3e50; margin-top: 32px; }
+  h3 { color: #4a90e2; margin-top: 24px; margin-bottom: 6px; }
+  ul { line-height: 1.9; }
+  li { margin-bottom: 4px; }
+  .date { color: #888; font-size: 14px; margin-bottom: 24px; }
+  .game-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; }
+  .law-card { background: #eef4fc; border: 1px solid #cfe0f5; border-radius: 10px; padding: 16px 20px; margin-bottom: 14px; }
+  .option-card { background: #fff8ec; border: 1px solid #f0dfb8; border-radius: 10px; padding: 16px 20px; margin-bottom: 14px; }
+  .sources { font-size: 13px; line-height: 1.8; color: #555; }
+</style>
+</head>
+<body>
+<p class="date">2026-09-20（第2弾）</p>
+<h1>対人カード/パーティゲーム ルール分析レポート</h1>
+<p>前回は「なぜバズったか」を調べたが、今回は<strong>ルール設計そのものの面白さ</strong>に絞って、実際にヒットした10タイトルを分析。最後に「共通する型」の抽出と、少人数開発でも作れそうな独自ルール案を4本提案。</p>
+
+<h2>1. 各タイトルの分析</h2>
+
+<div class="game-card">
+<h3>Marvel SNAP（モバイルPvPカードバトラー）</h3>
+<ul>
+<li><strong>コアルール</strong>: 6ターン制。3つの「ロケーション」に交互に(裏向きで)カードを置き、最終ターンで同時に公開。2ロケーション以上でパワーが上回れば勝ち</li>
+<li><strong>対人だからこその面白さ</strong>: 相手が最終ターンにどのロケーションへ全力を注ぐか"読み合う"心理戦。裏向きカードによる相互ブラフ</li>
+<li><strong>意思決定ポイント</strong>: どのロケーションを捨て、どこに全リソースを集中するか／早めに引くか撤退するか</li>
+<li><strong>セッション時間</strong>: 5〜8分。テンポが速く「もう1戦」を誘発</li>
+<li><strong>観戦適性</strong>: 最終ターンの同時公開が"種明かし"の瞬間になり配信映えする</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>Liar's Bar（ブラフ×ロシアンルーレット、2024〜25年Steamで急伸）</h3>
+<ul>
+<li><strong>コアルール</strong>: 手札のカードを裏向きに出し「これは指定の数字だ」と宣言。次のプレイヤーは信じるか「嘘つき呼ばわり」するかを選択。外れた側がロシアンルーレットのペナルティ</li>
+<li><strong>対人だからこその面白さ</strong>: 表情・声・発言のわずかな揺らぎを読む純粋な心理戦</li>
+<li><strong>意思決定ポイント</strong>: 「嘘をつくか」「相手の宣言を信じるか」の二択に高いリスクが乗る</li>
+<li><strong>セッション時間</strong>: 数分、周回性が高い</li>
+<li><strong>観戦適性</strong>: 配信で圧倒的に強い（ホロライブ等で流行）</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>Secret Hitler / 人狼系（正体隠匿×投票）</h3>
+<ul>
+<li><strong>コアルール</strong>: 陣営を隠して配役。議論と投票によって役職者を選出・排除。少数派は仲間を把握しているが多数派は誰が味方か分からない非対称構造</li>
+<li><strong>対人だからこその面白さ</strong>: 「嘘をどう積み重ねるか」「誰の発言を信じるか」というメタ推理は複数人の生身の人間だからこそ</li>
+<li><strong>意思決定ポイント</strong>: 投票のタイミング、疑わしい人物への誘導発言</li>
+<li><strong>セッション時間</strong>: 30〜45分</li>
+<li><strong>観戦適性</strong>: 高い（議論そのものがコンテンツになる）</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>ito（協力型・数字カード表現ゲーム）</h3>
+<ul>
+<li><strong>コアルール</strong>: 1〜100の数字カードを他人に見せず、お題に沿った言葉だけで大小を表現し昇順に出す協力ゲーム</li>
+<li><strong>対人だからこその面白さ</strong>: 「価値観のズレ」がそのまま笑いや驚きになる。1人プレイでは成立しない他者の感性との摩擦</li>
+<li><strong>意思決定ポイント</strong>: 数字を直接言わずにどう表現するか</li>
+<li><strong>セッション時間</strong>: 10〜15分</li>
+<li><strong>観戦適性</strong>: 中程度（身内向き）</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>Exploding Kittens（爆弾ロシアンルーレット×交渉）</h3>
+<ul>
+<li><strong>コアルール</strong>: 山札から爆弾を引いたら脱落。妨害カードで爆弾を回避・押し付け合う</li>
+<li><strong>対人だからこその面白さ</strong>: 妨害カードの応酬、交渉要素が対人ならではの駆け引きを生む</li>
+<li><strong>意思決定ポイント</strong>: 終盤いつ妨害カードを切るか、誰に爆弾を押し付けるか</li>
+<li><strong>セッション時間</strong>: 15分、ルール習得2分と参入障壁が低い</li>
+<li><strong>観戦適性</strong>: 終盤の緊張感は伝わりやすい</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>Gwent / Clash Royale / Hearthstone（対戦カード・タワー防衛系）</h3>
+<ul>
+<li><strong>コアルール</strong>: Gwentは3ラウンド制でパス判断が鍵。Clash Royaleはリアルタイムでエリクサーを消費しユニット配置</li>
+<li><strong>対人だからこその面白さ</strong>: Gwentは「いつ勝負を降りるか」がポーカー的。Clash Royaleは同時配置の裏読みが対AIでは成立しない</li>
+<li><strong>意思決定ポイント</strong>: Gwentは各ラウンドのパス判断、Clash Royaleはエリクサーのタイミング管理</li>
+<li><strong>セッション時間</strong>: Gwent15〜20分、Clash Royale3分1本勝負</li>
+<li><strong>観戦適性</strong>: eスポーツ化しているだけあり非常に高い</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>こいこい（花札の対人ゲーム）</h3>
+<ul>
+<li><strong>コアルール</strong>: 同月の札を合わせて役を作る。役ができた時点で「こいこい(続行)」か「勝負止め(確定)」かを選べる</li>
+<li><strong>対人だからこその面白さ</strong>: 「こいこい」宣言の瞬間、相手に手役を悟られ逆転行動を誘発する駆け引き</li>
+<li><strong>意思決定ポイント</strong>: "続行か確定か"のリスクリターン判断がゲームの核</li>
+<li><strong>セッション時間</strong>: 1局5〜10分、非常に短く周回性が高い</li>
+<li><strong>観戦適性</strong>: 「こいこい宣言→逆転」の瞬間はわかりやすいドラマ</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>Among Us（正体隠匿×アクション）</h3>
+<ul>
+<li><strong>コアルール</strong>: クルーとインポスターに分かれ、タスク消化 or 妨害・暗殺。死体発見や違和感から緊急会議→議論→投票で追放</li>
+<li><strong>対人だからこその面白さ</strong>: 「目撃情報の食い違い」「アリバイの主張」など人間同士でしか成立しない証言合戦</li>
+<li><strong>意思決定ポイント</strong>: インポスターはどこで誰を襲うか、クルーは誰の証言が矛盾しているか</li>
+<li><strong>セッション時間</strong>: 15〜30分</li>
+<li><strong>観戦適性</strong>: 非常に高い（配信文化を牽引した代表例）</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>UNO（攻撃カード×逆転）</h3>
+<ul>
+<li><strong>コアルール</strong>: 手札を場のカードと同じ色/数字/記号で出し切れば勝ち。ドロー2/4、スキップなどの攻撃カード</li>
+<li><strong>対人だからこその面白さ</strong>: 攻撃カードの押し付け合いは相手の手札状況を読む対人インタラクション</li>
+<li><strong>意思決定ポイント</strong>: 高得点カードを温存し一発逆転を狙うか、早めに処理してリスクを減らすか</li>
+<li><strong>セッション時間</strong>: 10〜15分</li>
+<li><strong>観戦適性</strong>: 中程度、攻撃カードの応酬シーンは分かりやすい</li>
+</ul>
+</div>
+
+<div class="game-card">
+<h3>雀魂(じゃんたま)などオンライン麻雀</h3>
+<ul>
+<li><strong>コアルール</strong>: 4人対戦で役を揃えて上がる。リーチ後は身動きが取れず相手からの放銃リスクを負う</li>
+<li><strong>対人だからこその面白さ</strong>: 「どの牌を捨てれば相手にとって危険か」を読み合う。相手の捨て牌から手牌を推理するのは対人ならでは</li>
+<li><strong>意思決定ポイント</strong>: リーチのタイミング、危険牌を切るかどうかのプレッシャー判断</li>
+<li><strong>セッション時間</strong>: 1局10〜20分、半荘30分〜</li>
+<li><strong>観戦適性</strong>: 高い（観戦・牌譜共有機能が標準搭載）</li>
+</ul>
+</div>
+
+<h2>2. 「対人ゲームとして面白いルール」に共通する型</h2>
+
+<div class="law-card"><strong>型1：不完全情報×ブラフ・チャレンジ型</strong><br>Liar's Bar, Coup, Gwentのパス駆け引き。自分の情報を偽って主張し、相手が信じるか疑うかを選ぶ。ハイリスク・ハイリターン構造</div>
+<div class="law-card"><strong>型2：正体隠匿×議論・投票型</strong><br>Secret Hitler, 人狼, Among Us。秘密の役割を与え、議論と投票で真偽を暴く。「証言の食い違いを追及する」快感はAI戦では成立しない</div>
+<div class="law-card"><strong>型3：同時公開・裏をかく型</strong><br>Marvel SNAPの最終ターン, Clash Royaleの同時配置。裏向き/同時進行でアクションを積み上げ、最後に一斉公開する</div>
+<div class="law-card"><strong>型4：続行/確定のリスクリターン判断型</strong><br>こいこい, Liar's Barの賭け継続, Push Your Luck系。「今の成果で止めるか、より高い報酬を狙って続けるか」</div>
+<div class="law-card"><strong>型5：攻撃・妨害カードによる直接インタラクション＆逆転型</strong><br>UNO, Exploding Kittens。手札で直接相手を妨害できるため、劣勢側が土壇場で逆転できる</div>
+<div class="law-card"><strong>型6：限定リソース×タイミング管理型</strong><br>Clash Royaleのエリクサー, Marvel SNAPのエネルギー。リソースの使いどころを相手と探り合う</div>
+
+<p>共通して言えるのは、<strong>「情報の非対称性」＋「短いサイクルでの意思決定」＋「一発逆転の余地」</strong>の3点セットが揃うと、対人だからこそ盛り上がるゲームになりやすいという点。観戦適性が高いタイトル（Liar's Bar, Among Us, 雀魂）は、いずれも"疑いが証言・宣言という言語化された形で外に出る"仕組みを持つ。</p>
+
+<h2>3. 少人数開発でも作れそうな独自ルール案（4本）</h2>
+
+<div class="option-card">
+<strong>案A：「ブラフ・レーン」</strong>（Marvel SNAP×Liar's Barのハイブリッド）<br>
+3レーンに毎ターン戦力トークンを裏向きで配置。配置後、各プレイヤーは「自分が一番強いと思うレーン」を1つだけ宣言（数値は言わない）。相手はその宣言を信じてそのレーンを避けるか、「嘘だ」とコールしてそのレーンに戦力を集中投入するかを選べる。コールが当たれば奪取ボーナス、外れれば逆に大きく不利になる。<br>
+<em>根拠</em>: SNAPの同時公開の緊張に、Liar's Barの「言葉のブラフ」を組み合わせ、数値管理ゲームに心理戦の言語レイヤーを足せる。1戦3〜4分で完結し、モバイルPvPと相性が良い。
+</div>
+
+<div class="option-card">
+<strong>案B：「危険な分け前」</strong>（こいこい×Exploding Kittensの押し引き）<br>
+全員で共有の"分け前プール"にチップを積んでいく。自分の番で「降りる(今の取り分を確定)」か「乗る(プールを増やして続行)」かを選択。山札には一定確率で"爆発カード"が仕込まれており、爆発を引いた時点でまだ「乗って」いた全員は分け前をゼロに失う。<br>
+<em>根拠</em>: こいこいの「続行か確定か」の意思決定に、Exploding Kittensのランダム爆弾要素を掛け合わせ、他人の欲張り具合を横目で見ながら自分も判断を迫られる"チキンレース"感が生まれる。ルールは極めて単純で開発負荷が低い。
+</div>
+
+<div class="option-card">
+<strong>案C：「証言オークション」</strong>（人狼系×Coup風チャレンジのハイブリッド）<br>
+正体隠匿の基本構造はそのままに、投票の前に証言権をオークションで競り落とす仕組みを追加。発言力をトークンで奪い合うため、「怪しいけど喋らせたくない相手」を黙らせる駆け引きが生まれる。<br>
+<em>根拠</em>: 従来の人狼は発言順が固定で単調になりがちだが、発言権自体を競争資源にすることで経済的判断という新しい軸が加わり、短時間でもドラマが作りやすい。
+</div>
+
+<div class="option-card">
+<strong>案D：「せーので裏切り」</strong>（ito×Secret Hitlerのハイブリッド）<br>
+itoのように、お題に沿って手札の数字を暗喩で説明し合いながら並べる協力ゲームがベース。1人だけ秘密裏に「妨害者」カードを持っており、わざと誤解を誘う表現をして失敗させることができる。全員でせーので「誰が妨害者だと思うか」を指差し、当てられなければ妨害者の勝ち。<br>
+<em>根拠</em>: itoの"解釈のズレによる笑い"という強みを保ちつつ、Secret Hitler的な裏切り者探しを混ぜ、「本当にただの価値観のズレなのか、意図的な妨害なのか」を疑う新しい緊張感が生まれる。既存itoユーザー層にそのまま刺さりやすく、ルール拡張のみで実装できるため開発コストが低い。
+</div>
+
+<h2>補足コメント</h2>
+<p>ヒットしている対人ゲームはほぼ例外なく「不完全情報＋短いサイクルの意思決定＋逆転可能性」の3点を極めてシンプルなルールで実現している。案Aと案Bは特に開発負荷が低く（トークン管理+乱数のみ）、モバイルPvPとして小規模チームでも検証しやすい。次のステップとして、案A・案Bのどちらかをペーパープロトタイプ（紙とトークン）で試遊し、実際の駆け引きの手応えを確認することを提案する。</p>
+
+<h2>参考情報源</h2>
+<div class="sources">
+<p>
+<a href="https://w.atwiki.jp/makarusnap/pages/23.html">まかるノート(MARVEL SNAP編) 初心者向け講座</a><br>
+<a href="https://goodapps-ranking.com/marvelsnap-rules/">マーベル・スナップ 7つの基本ルール解説</a><br>
+<a href="https://game.boom-app.com/entry/marvelsnap-review">MARVEL SNAP 心理戦を楽しめるカードバトル紹介</a><br>
+<a href="https://automaton-media.com/articles/newsjp/20241021-315251/">嘘つき極限ギャンブルマルチ『Liar's Bar』新ブラフルール追加 - AUTOMATON</a><br>
+<a href="https://news.denfaminicogamer.jp/news/241016o">Steamでは発売から2週間で4000件レビュー『Liar's Bar』 - 電ファミニコゲーマー</a><br>
+<a href="https://game.watch.impress.co.jp/docs/kikaku/1636526.html">配信界隈で流行する「Liar's Bar」の面白さ - GAME Watch</a><br>
+<a href="https://bodoge.hoobby.net/games/secret-hitler">シークレットヒトラー / Secret Hitler ルール紹介</a><br>
+<a href="https://note.com/kino0551/n/n71910b272fea">人狼ゲームから読み取るアナログゲームにおけるゲームデザインの注意点</a><br>
+<a href="https://bodoge.hoobby.net/games/ito">イト / ito ルール紹介</a><br>
+<a href="https://broad.tokyo/column/44343">『ito』の遊び方紹介 - broad.tokyo</a><br>
+<a href="https://nicobodo.com/games/exploding-kittens.html">こねこばくはつ (Exploding Kittens) ゲーム紹介</a><br>
+<a href="https://bged.info/exploding-kitten-rule">「Exploding Kittens」和訳ルール</a><br>
+<a href="https://automaton-media.com/articles/reportjp/20170517-46723/">『The Witcher 3』から生まれた『グウェント』心理戦 - AUTOMATON</a><br>
+<a href="https://esports-world.jp/column/13187">5分でわかる『クラッシュ・ロワイヤル』 - eSports World</a><br>
+<a href="https://gpf.mymd.jp/wp/%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/202507/%E8%8A%B1%E6%9C%AD%E3%80%8C%E3%81%93%E3%81%84%E3%81%93%E3%81%84%E3%80%8D%E5%85%A5%E9%96%80%EF%BC%9A%E5%A5%A5%E6%B7%B1%E3%81%84%E9%A7%86%E3%81%91%E5%BC%95%E3%81%8D%E3%81%AE%E4%B8%96%E7%95%8C%E3%81%B8/">花札「こいこい」入門</a><br>
+<a href="https://tokusengai.com/_ct/17422927">Among Us 基本概要 - 特選街web</a><br>
+<a href="https://light-gamer.com/entry/impressions-amongus-four-player-game-and-anomalous-rules">『Among Us』4人プレイの感想</a><br>
+<a href="https://kakakumag.com/hobby/?id=14057">「UNO」の正しいルール、知ってる？ - 価格.comマガジン</a><br>
+<a href="https://sawa-turedure.net/enjoy_holidays_uno-20190513">『UNO』は面白い。公式ルールで面白く遊ぶ戦術</a><br>
+<a href="https://dengekionline.com/articles/187324/">今さら『雀魂』にハマった麻雀初心者女子の感想 - 電撃オンライン</a><br>
+<a href="https://japan-games24.com/jantama/">雀魂（じゃんたま）は面白い？人気麻雀アプリの感想と評価</a>
+</p>
+</div>
+
+</body>
+</html>
