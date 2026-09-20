@@ -96,14 +96,20 @@ async function loadLinks() {
     const container = document.getElementById(id);
     try {
       const res = await fetch(`${path}/index.json`);
-      const files = await res.json();
-      if (!files.length) {
+      const items = await res.json();
+      if (!items.length) {
         container.innerHTML = '<p class="empty">ファイルなし</p>';
         continue;
       }
-      container.innerHTML = files.sort().reverse().map(f =>
-        `<a class="link-item" href="${path}/${f}">
-          <span class="link-date">${f.replace('.html','')}</span>
+      // 文字列配列（従来形式）とオブジェクト配列（タイトル付き）の両方に対応
+      const normalized = items.map(item =>
+        typeof item === 'string'
+          ? { file: item, label: item.replace('.html', '') }
+          : { file: item.file, label: item.title || item.file.replace('.html', '') }
+      );
+      container.innerHTML = normalized.sort((a, b) => b.file.localeCompare(a.file)).map(({ file, label }) =>
+        `<a class="link-item" href="${path}/${file}">
+          <span class="link-date">${label}</span>
           <span class="link-arrow">›</span>
         </a>`
       ).join('');
