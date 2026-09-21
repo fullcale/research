@@ -1,6 +1,6 @@
 ﻿# リサーチ・コンテキスト（自動更新）
 
-最終更新: 2026-09-20
+最終更新: 2026-09-21
 
 このファイルは毎晩のリサーチスクリプト（run_research.ps1）が読み込み・追記する運用メモです。
 「直近カバートピック」はスクリプトが自動で追記・整理（直近14日分のみ保持）します。
@@ -40,3 +40,9 @@
 - 2026-09-20 [マーケ]: Daychat, Cal.ai, Morgen, Google Calendar Gemini, フルカレ
 - 2026-09-20 [機能]: Notion Calendar、Vimcal、Calendara、GroupCal、Amie
 - 2026-09-20 [耐震カルテ]: 耐震カルテ、BCP実践促進助成金、制震ダンパー、ホワイトレーベル提供、危険度判定
+- 2026-09-21 [起業]: Gimlet Labs, マルチシリコン推論クラウド, ピープルエックス, Fortaegis, サイバーセキュリティ
+- 2026-09-21 [起業アイデア]: 職人のコエ日報SaaS, 電波ゼロ待ち合わせアプリ, 相続登記お助け窓口, 詐欺コール見守りアプリ
+- 2026-09-21 [マーケ]: TimeTree、ASO対策、TikTokマーケティング、AIカレンダー比較、フルカレ
+- 2026-09-21 [機能]: Siri AI、Daychat、Lifestack、Morgen/Motion、Fantastical
+- 2026-09-21 [耐震カルテ]: 耐震カルテ, TSUDULY, BCP実践促進助成金, ダンパー割り当て機能, マルチテナント化
+- 2026-09-21 [ゲーム]: Grail, 橘リルリ転生いたします, Sokpop Collective, Japanese Ramen Simulator, オートバトラー
