@@ -1,6 +1,6 @@
 ﻿# リサーチ・コンテキスト（自動更新）
 
-最終更新: 2026-09-21
+最終更新: 2026-09-22
 
 このファイルは毎晩のリサーチスクリプト（run_research.ps1）が読み込み・追記する運用メモです。
 「直近カバートピック」はスクリプトが自動で追記・整理（直近14日分のみ保持）します。
@@ -46,3 +46,9 @@
 - 2026-09-21 [機能]: Siri AI、Daychat、Lifestack、Morgen/Motion、Fantastical
 - 2026-09-21 [耐震カルテ]: 耐震カルテ, TSUDULY, BCP実践促進助成金, ダンパー割り当て機能, マルチテナント化
 - 2026-09-21 [ゲーム]: Grail, 橘リルリ転生いたします, Sokpop Collective, Japanese Ramen Simulator, オートバトラー
+- 2026-09-22 [起業]: CADDi、TypeSafe AI、ピープルエックス、Claude Code、HabitKit
+- 2026-09-22 [起業アイデア]: 副業アイデア 2026-09-22（パース失敗・生データ）
+- 2026-09-22 [マーケ]: Clockwise、Reclaim.ai、TimeTree、Google Play Ask Play、フルカレ
+- 2026-09-22 [機能]: Toki、Trace、TimeTree、Google Calendar Help me schedule、LINE連携
+- 2026-09-22 [耐震カルテ]: 耐震カルテ, BCP実践促進助成金, ダンパー型番編集, 壁材適合チェック, マルチテナント化
+- 2026-09-22 [ゲーム]: Agreeee, Megabonk, Cairn, 利用規約ミニゲーム, 引き算型シミュレーション
